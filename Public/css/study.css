@@ -1,0 +1,94 @@
+/* ทั่วไป */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* สำหรับการจัดแต่งหน้าล็อกอิน */
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    color: #FF6F61;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #FF6F61;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+/* สำหรับการจัดแต่งหน้าคำนวณ BMI */
+.bmi-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.bmi-form {
+    margin-bottom: 20px;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+#bmi-value {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#bmi-status {
+    font-size: 1.2em;
+    color: #555;
+}
+.success-message {
+    color: green;
+    font-size: 1em;
+}

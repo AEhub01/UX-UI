@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #FF6F61;
+        }
+        label {
+            font-size: 18px;
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #FF6F61;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #e85c50;
+        }
+        #result {
+            font-size: 20px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>BMI Calculator</h2>
+        <label for="weight">น้ำหนัก (kg):</label>
+        <input type="number" id="weight" placeholder="ป้อนน้ำหนักของคุณ">
+        
+        <label for="height">ส่วนสูง (cm):</label>
+        <input type="number" id="height" placeholder="ป้อนส่วนสูงของคุณ">
+
+        <button onclick="calculateBMI()">คำนวณ BMI</button>
+        
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            let weight = document.getElementById("weight").value;
+            let height = document.getElementById("height").value / 100; // แปลง cm เป็น m
+
+            if (weight == "" || height == "" || weight <= 0 || height <= 0) {
+                document.getElementById("result").innerHTML = "กรุณาป้อนข้อมูลให้ถูกต้อง!";
+                return;
+            }
+
+            let bmi = weight / (height * height);
+            let category = "";
+
+            if (bmi < 18.5) {
+                category = "น้ำหนักต่ำกว่ามาตรฐาน";
+            } else if (bmi < 24.9) {
+                category = "น้ำหนักปกติ";
+            } else if (bmi < 29.9) {
+                category = "น้ำหนักเกิน";
+            } else {
+                category = "อ้วน (อันตราย)";
+            }
+
+            document.getElementById("result").innerHTML = `ค่า BMI ของคุณ: ${bmi.toFixed(2)} (${category})`;
+        }
+    </script>
+</body>
+</html>

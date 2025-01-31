@@ -1,0 +1,196 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: 'Arial', sans-serif;
+}
+nav {
+  padding: 0.4rem;
+  background-color: rgb(28, 27, 27);
+}
+
+.nav-con {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.logo a {
+  font-size: 2rem;
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.menu li {
+  margin: 0 1rem;
+}
+
+.menu li a {
+  color: aliceblue;
+  text-decoration: none;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+
+  .description {
+    max-width: 300px; /* กำหนดความกว้างของคำอธิบาย */
+    font-size: 16px;
+    color: #555;
+}
+
+.ex1 {
+  display: flex;
+}
+
+  /* สไตล์สำหรับหัวข้อหลัก */
+  h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+    color: #FF6F61; /* สีสดใส */
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 28px;
+    color: #FF6F61;
+    border-bottom: 2px solid #FF6F61;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+
+  /* สไตล์สำหรับกล่องที่แสดงการออกกำลังกาย */
+  .exercise {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .content {
+    display: flex;
+    justify-content: flex-start; /* จัดตำแหน่งฝั่งซ้าย */
+    align-items: center; /* จัดให้อยู่กลางในแนวตั้ง */
+    gap: 20px; /* ระยะห่างระหว่าง iframe กับ description */
+}
+
+.content iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border-radius: 10px;
+  
+}
+
+/* ปรับคำอธิบายให้อยู่ฝั่งขวา */
+.description {
+  max-width: 300px;
+  font-size: 16px;
+  color: #555;
+  text-align: left;
+  padding: 3rem;
+}
+
+
+
+  .exercise h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .exercise p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+
+  /* ปรับขนาดของวิดีโอ */
+  .exercise video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* เอฟเฟกต์เมื่อโฮเวอร์บนวิดีโอ */
+  .exercise video:hover {
+    transform: scale(1.05);
+  }
+
+  /* รายการท่าฝึกในส่วน workout */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  ul li {
+    font-size: 18px;
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  /*ul li:before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #FF6F61;
+  }*/
+
+  /* เพิ่มลักษณะของ footer */
+  footer {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border-top: 2px solid #FF6F61;
+  }
+
+  .head p{
+    margin-left: 20px;
+  }
+
+  /* ปรับหน้าจอสำหรับมือถือ */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+
+    .exercise {
+      padding: 15px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    .exercise h3 {
+      font-size: 20px;
+    }
+
+    ul li {
+      font-size: 16px;
+    }
+  }
