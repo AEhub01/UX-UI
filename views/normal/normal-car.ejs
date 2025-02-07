@@ -8,19 +8,40 @@
 </head>
 <body>
   <nav>
+       
     <div class="container">
         <div class="nav-con">
             <div class="logo">
                 <a href="#">Workout</a>
             </div>
             <ul class="menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/auth/login">Login</a></li>
-                <li><a href="/auth/register">Register</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/member/member">Home</a></li>
+                <li><a href="/member/logout" class="text-light text-end">Logout</a></li>
+                
+                
             </ul>
         </div>
     </div>
+    <!-- ป็อปอัพฟอร์ม -->
+    <div id="contactPopup" class="popup">
+        
+    <div class="popup-content">
+        <span class="close-btn" id="closePopup">&times;</span>
+        <h2>Contact Us</h2>
+        <form action="/submit-contact" method="POST">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</div>
 </nav>
   <div class="hero">
     <h1>Intermediate Training</h1>
@@ -28,6 +49,7 @@
     <div class="exercise">
       <h3>Low impact, high intensity intermediate</h3>
       <p>home cardio workout</p>
+      <button class="report-btn" onclick="showReportForm(7)">รายงานเนื้อหาของคลิป</button>
       <div class="ex1">
         <iframe width="560" height="315" 
             src="https://www.youtube.com/embed/Ba3qZjzPonI" 
@@ -44,6 +66,7 @@
     <div class="exercise">
       <h3>Intermediate Cardio workout</h3>
       <p>Start your own Body Project </p>
+      <button class="report-btn" onclick="showReportForm(8)">รายงานเนื้อหาของคลิป</button>
       <div class="ex1">
         <iframe width="560" height="315" 
             src="https://www.youtube.com/embed/wLYeRlyyncY" 
@@ -68,4 +91,20 @@
     <div class="head"><p>Stretch for 20-30 seconds for each muscle group.</p></div>
   </div>
 </body>
+<div id="reportForm" class="popup">
+  <div class="popup-content">
+      <span class="close-btn" onclick="closeReportForm()">&times;</span>
+      <h2>กรุณากรอกรายละเอียดการรายงาน</h2>
+      <form id="reportContentForm" action="/submit-report" method="POST">
+          <input type="hidden" name="videoId" id="videoId">
+          <label for="reason">เหตุผลในการรายงาน</label>
+          <textarea name="reason" id="reason" required></textarea>
+          <label for="email">อีเมลของคุณ</label>
+          <input type="email" name="email" id="email" required>
+          <button type="submit">ส่งรายงาน</button>
+      </form>
+  </div>
+</div>
+
+<script src="/js/report.js"></script>
 </html>

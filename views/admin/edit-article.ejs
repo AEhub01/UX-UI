@@ -1,0 +1,20 @@
+<h2>แก้ไขบทความ</h2>
+<form action="/admin/articles/edit/<%= article.id %>" method="POST" enctype="multipart/form-data">
+    <label>ชื่อบทความ:</label>
+    <input type="text" name="title" value="<%= article.title %>" required>
+
+    <label>เนื้อหา:</label>
+    <textarea name="content" required><%= article.content %></textarea>
+
+    <label>รูปภาพเดิม:</label><br>
+    <% if (article.image) { %>
+        <img src="/uploads/<%= article.image %>" width="200"><br>
+    <% } %>
+
+    <input type="hidden" name="oldImage" value="<%= article.image %>">
+
+    <label>เลือกรูปภาพใหม่ (ถ้าต้องการเปลี่ยน):</label>
+    <input type="file" name="image" accept="image/png, image/jpeg">
+
+    <button type="submit">บันทึกการเปลี่ยนแปลง</button>
+</form>

@@ -1,7 +1,7 @@
 /* ทั่วไป */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb0e9F2_VVDATOCgxDNBiN9QAUvrXtcdaMKg&s'); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,4 +91,7 @@ button:hover {
 .success-message {
     color: green;
     font-size: 1em;
+}
+.error-msg {
+    color: red;
 }

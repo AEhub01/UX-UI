@@ -1,18 +1,28 @@
-document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.getElementById("loginForm").addEventListener("submit", async function(event) {
+    event.preventDefault(); // ป้องกันการโหลดหน้าใหม่
 
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const errorMessage = document.getElementById("login-error");
 
-    // ตรวจสอบข้อมูลจาก LocalStorage
-    const storedUsername = localStorage.getItem('username');
-    const storedPassword = localStorage.getItem('password');
+    try {
+        const response = await fetch("/auth/verify", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password }),
+        });
 
-    if (username === storedUsername && password === storedPassword) {
-        // ล็อกอินสำเร็จ -> ไปที่หน้าคำนวณ BMI
-        window.location.href = 'bmi.html';
-    } else {
-         //แสดงข้อผิดพลาด
-        document.getElementById('login-error').textContent = 'Invalid username or password!';
+        const result = await response.json();
+
+        if (response.ok) {
+            // ✅ ล็อกอินสำเร็จ → ไปหน้า index
+            window.location.href = "/index";
+        } else {
+            // ❌ ล็อกอินไม่ผ่าน
+            errorMessage.textContent = result.msg || "Login failed";
+        }
+    } catch (error) {
+        console.error("Login error:", error);
+        errorMessage.textContent = "Something went wrong. Please try again.";
     }
 });

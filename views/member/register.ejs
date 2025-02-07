@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Exercise</title>
+    <link rel="stylesheet" href="/css/study.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Register - Exercise</h1>
+        <form action="/member/register" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        
+            <button type="submit">Register</button>
+
+            
+        
+            <div class="mb-3 text-danger">
+                <h2 class="error-msg"><%=locals?.msg?msg:""%></h2>
+            </div>    
+        </form>
+        
+        <p>Do you have an account? <a href="/member/login">Login here</a></p>
+    </div>
+    
+</body>
+</html>
